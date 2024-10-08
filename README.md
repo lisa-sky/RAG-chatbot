@@ -1,7 +1,7 @@
 # RAG-chatbot Overview🤖
 Built a RAG-chatbot that allows users to upload text and PDF files, then ask questions about the content of those files using an Azure OpenAI-powered chatbot. It utilizes document chunking and a vectorstore for efficient context retrieval, providing accurate and concise answers based on the uploaded document
 
-## 🚀 Features
+## 🚀 Chatbot Features
 - **File Upload**: Users can upload multiple files in `.txt` and `.pdf` formats.
 - **Question-Answering Chatbot**: Users can ask questions related to the uploaded files, and the chatbot provides concise answers using context retrieved from the documents.
 - **Document Chunking**: Text from large files is split into smaller chunks for efficient processing.
@@ -37,11 +37,19 @@ To run this application using the provided Docker and devcontainer setup, follow
      ```
 
 7. **Access the Application**
-   - 
-
+    - Once the application is running, you can access it in your browser at `http://localhost:8501`.
 
 
 
 ## Documentation for Changes📄
+### 1. **PDF File Parsing**
+- **Imported `PyPDFLoader`**: This library is utilized to parse PDF files, enabling the application to handle user-uploaded PDF documents efficiently.
+- **Temporary File Handling**: Utilized the `tempfile` module to create temporary files for storing uploaded PDFs, ensuring the application can read and process them without leaving residual files on the filesystem.
+
+### 2. **Multiple File Uploads**
+- **Feature Enhancement**: The application now supports uploading multiple files at once. Users can upload both `.txt` and `.pdf` files, expanding the scope of questions they can ask related to the content of these files.
+
+### 3. **Default Tenant Error Prevention**
+- **Integration of ChromaDB API**: Added the line `chromadb.api.client.SharedSystemClient.clear_system_cache()` to prevent default tenant errors that could occur when the chatbot interacts with the ChromaDB service. This helps ensure a smoother user experience by mitigating potential connection issues.
 
 
