@@ -33,7 +33,7 @@ To run this application using the provided Docker and devcontainer setup, follow
 6. **Run the Application**
    - In the terminal, run the following command to start the application:
      ```bash
-     streamlit run chatbot.py
+     streamlit run chatbotTest.py
      ```
 
 7. **Access the Application**
